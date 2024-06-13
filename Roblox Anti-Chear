@@ -1,0 +1,35 @@
+-- Script to be placed in ServerScriptService.
+
+local Players = game:GetService("Players")
+
+-- Define acceptable speed range
+local MAX_SPEED = 50 -- Adjust this value as needed
+
+-- Function to check player speed
+local function checkPlayerSpeed(player)
+    local character = player.Character
+    if character and character:FindFirstChild("HumanoidRootPart") then
+        local humanoidRootPart = character.HumanoidRootPart
+        local speed = humanoidRootPart.Velocity.Magnitude
+        
+        if speed > MAX_SPEED then
+            -- Handle the cheating behavior
+            warn(player.Name .. " is moving too fast! Speed: " .. speed)
+            -- You can kick the player or take other actions here
+            player:Kick("Speed hacking detected.")
+        end
+    end
+end
+
+-- Function to monitor all players
+local function monitorPlayers()
+    while true do
+        for _, player in pairs(Players:GetPlayers()) do
+            checkPlayerSpeed(player)
+        end
+        wait(1) -- Check every second
+    end
+end
+
+-- Start monitoring players
+monitorPlayers()
