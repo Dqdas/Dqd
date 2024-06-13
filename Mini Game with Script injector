@@ -1,0 +1,21 @@
+- - HTML - -
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <h1>Mini App with Script Execution</h1>
+    <canvas id="gameCanvas" width="500" height="500"></canvas>
+    <br>
+    <input type="text" id="scriptInput" placeholder="Enter your script here...">
+    <button id="executeButton">Execute Script</button>
+
+    <script src="scripts.js"></script>
+    
+</body>
+</html>
